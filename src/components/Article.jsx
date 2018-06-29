@@ -8,14 +8,17 @@ const TAG = {
   color: 'white'
 }
 
+const THUMBNAIL = {
+  display: 'flex'
+}
+
 
 function Article(props){
   return(
     <div>
-      <div>
         <h5 style={TAG}>{props.tag}</h5>
         <img src={props.image} alt={props.alt}/>
-      </div>
+        <h3>{props.headline}</h3>
     </div>
   );
 }
@@ -23,7 +26,8 @@ function Article(props){
 Article.propTypes = {
   tag: PropTypes.string,
   image: PropTypes.string,
-  alt: PropTypes.string
+  alt: PropTypes.string,
+  headline: PropTypes.string
 };
 
 export default Article;
