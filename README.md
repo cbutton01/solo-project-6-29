@@ -1,0 +1,15 @@
+# React Solo Project 6-29-18
+
+This project is for solo work done on Friday 06-29-18 for Epicodus. <br>
+_By Cameron Button_
+
+<hr>
+
+## Description
+
+One of the projects I had the most fun with during angular at Epicodus was my clone of the PCGamer landing page.  This project was built in angular and utilizes css grid.  This will be a good example of my knowledge of React, because it has several different elements that will break neatly into components and I will be able to use css objects or modules to style these components rather than a stylesheet.
+
+
+The biggest difference between React and angular is that this will be a single page application.  Routing will be implemented, but routes will navigate components rather than pages.  Another key difference will be rather than using component classes like angular to generate an instance of each component I will simply be able to loop with an array in my jsx file.
+
+### Notes
