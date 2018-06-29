@@ -24,7 +24,6 @@ const ARTICLE_LIST = [
 function Content(){
   return(
     <div style={CONTENT_BOX}>
-      Content
       <div style={THUMBNAIL_STORIES}>
         {
           ARTICLE_LIST.map((article, index) =>
