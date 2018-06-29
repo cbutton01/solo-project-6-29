@@ -12,4 +12,6 @@ One of the projects I had the most fun with during angular at Epicodus was my cl
 
 The biggest difference between React and angular is that this will be a single page application.  Routing will be implemented, but routes will navigate components rather than pages.  Another key difference will be rather than using component classes like angular to generate an instance of each component I will simply be able to loop with an array in my jsx file.
 
+<img src="src\assets\component-structure.png" height="600">
+
 ### Notes
