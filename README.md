@@ -21,3 +21,4 @@ The biggest difference between React and angular is that this will be a single p
 ##### The Unforeseen and Questions
 
   * Does the shorthand for grid work with css objects?  I'm about to find out.
+  * Grid is a bit more finnicky than in angular.  I am having trouble getting my article components to display the way I want them to.
