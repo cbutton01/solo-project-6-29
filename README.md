@@ -24,3 +24,4 @@ The biggest difference between React and angular is that this will be a single p
   * Grid is a bit more finnicky than in angular.  I am having trouble getting my article components to display the way I want them to.
   * Because of the way React is set up with app.jsx I'm finding it difficult to line my background image up the way I want it to look.
   * The links will not stop being blue and underlined, and I don't know why.
+  * When you loop through a component it makes it harder to apply css grid to those components
