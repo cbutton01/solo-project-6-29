@@ -49,7 +49,7 @@ function Content(){
         )}
       </div>
       <div>
-        <h2>News Feed</h2>
+        <h2>News Stream</h2>
         {
           ARTICLE_LIST.map((article, index) =>
           <Link to='#'>
