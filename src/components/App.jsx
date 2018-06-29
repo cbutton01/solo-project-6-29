@@ -1,13 +1,14 @@
 import React from 'react';
 import Error404 from './Error404';
 import Header from './Header';
+import Content from './Content';
 import { Switch, Route } from 'react-router-dom';
 
 function App(){
 
   const main = {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
+    gridTemplateColumns: '1fr 3fr 1fr',
     gridGap: '10px',
     padding: '10px',
   };
