@@ -6,9 +6,10 @@ function Header(){
     backgroundColor: '#DC191B',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     fontFamily: 'sans-serif',
-    padding: '0 25px',
+    padding: '0',
+    height: '20px',
     minWidth: '625px',
     color: 'white'
   };
