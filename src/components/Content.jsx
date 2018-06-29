@@ -9,10 +9,23 @@ const CONTENT_BOX = {
 }
 
 const THUMBNAIL_STORIES = {
-  display: 'grid'
+  display: 'grid',
+  gridTemplateRows: 'repeat(auto-fit, minmax(80px, 1fr))',
 }
 
 const ARTICLE_LIST = [
+  {
+    tag: 'News',
+    image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
+    alt: 'this is an image',
+    headline: 'This is the Headline'
+  },
+  {
+    tag: 'News',
+    image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
+    alt: 'this is an image',
+    headline: 'This is the Headline'
+  },
   {
     tag: 'News',
     image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',

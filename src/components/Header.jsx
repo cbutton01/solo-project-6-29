@@ -14,6 +14,7 @@ function Header(){
     color: 'white'
   };
   const HEADER = {
+    height: '40px',
     fontFamily: 'sans-serif',
     color: 'white',
     backgroundColor: 'black',
@@ -28,6 +29,7 @@ function Header(){
   const RED = {
     backgroundColor: '#DC191B'
   }
+
 
   return (
     <div>
