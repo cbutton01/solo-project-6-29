@@ -14,4 +14,10 @@ The biggest difference between React and angular is that this will be a single p
 
 <img src="src\assets\component-structure.png" height="600">
 
+<hr>
+
 ### Notes
+
+##### The Unforeseen and Questions
+
+  * Does the shorthand for grid work with css objects?  I'm about to find out.
