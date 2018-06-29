@@ -12,9 +12,15 @@ function App(){
     gridGap: '10px',
     padding: '10px',
   };
+  const BACKGROUND = {
+      backgroundImage: 'url(https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKCb1PHAYBABGAEyCCKl03Vg27vT&quot;)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover'
+  }
 
   return (
-    <div>
+    <div style={BACKGROUND}>
       <Header/>
       <div style={main}>
         <div>

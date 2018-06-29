@@ -13,6 +13,7 @@ function Header(){
     color: 'white'
   };
   const HEADER = {
+    fontFamily: 'sans-serif',
     color: 'white',
     backgroundColor: 'black',
     padding: '2%',
@@ -20,7 +21,8 @@ function Header(){
     justifyContent: 'space-between'
   };
   const TITLE = {
-    display: 'flex'
+    display: 'flex',
+    alignItems: 'baseline'
   }
   const RED = {
     backgroundColor: '#DC191B'
