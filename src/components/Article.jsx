@@ -11,6 +11,7 @@ function Article(props){
             margin: 5px;
             font-family: sans-serif;
             color: white;
+            flex-direction: column;
           }
 
           h5 {
@@ -22,7 +23,7 @@ function Article(props){
 
           h3 {
             background-color: black;
-            position: baseline;
+            position:;
           }
           `}
         </style>
