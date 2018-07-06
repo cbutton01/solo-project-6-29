@@ -2,11 +2,6 @@ import React from 'react';
 import Article from './Article';
 import { Link } from 'react-router-dom';
 
-const CONTENT_BOX = {
-  backgroundColor: '#ccc',
-  display: 'grid',
-  gridTemplateColumns: '2fr 1fr'
-}
 
 const THUMBNAIL_STORIES = {
   display: 'grid',
@@ -36,29 +31,39 @@ const ARTICLE_LIST = [
 
 function Content(){
   return(
-    <div style={CONTENT_BOX}>
-      <div style={THUMBNAIL_STORIES}>
-        {
-          ARTICLE_LIST.map((article, index) =>
-          <Article tag={article.tag}
-            image={article.image}
-            alt={article.alt}
-            headline={article.headline}
-            key={index}
-            />
-        )}
-      </div>
-      <div>
-        <h2>News Stream</h2>
-        {
-          ARTICLE_LIST.map((article, index) =>
-          <Link to='#'>
-          <h3>{article.headline}</h3>
-          </Link>
-        )}
-      </div>
-    </div>
-  );
-}
+    <section>
+      <style jsx>
+        {`
+          section {
+            backgroundColor: #ccc;
+            display: grid;
+            gridTemplateColumns: 2fr 1fr;
+          }
 
-export default Content;
+          `}
+        </style>
+        <div style={THUMBNAIL_STORIES}>
+          {
+            ARTICLE_LIST.map((article, index) =>
+            <Article tag={article.tag}
+              image={article.image}
+              alt={article.alt}
+              headline={article.headline}
+              key={index}
+              />
+          )}
+        </div>
+        <div>
+          <h2>News Stream</h2>
+          {
+            ARTICLE_LIST.map((article, index) =>
+            <Link to='#'>
+              <h3>{article.headline}</h3>
+            </Link>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  export default Content;
