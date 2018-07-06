@@ -20,7 +20,7 @@ function App(){
   }
 
   return (
-    <div style={BACKGROUND}>
+    <section style={BACKGROUND}>
       <Header/>
       <div style={main}>
         <div>
@@ -30,7 +30,7 @@ function App(){
           <Route component={Error404} />
         </Switch>
       </div>
-    </div>
+    </section>
   );
 }
 
