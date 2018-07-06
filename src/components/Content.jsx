@@ -38,6 +38,7 @@ function Content(){
             background-color: #ccc;
             display: grid;
             grid-template-columns: 2fr 1fr;
+            grid-gap: 20px;
           }
 
 
