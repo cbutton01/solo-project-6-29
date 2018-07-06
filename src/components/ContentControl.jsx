@@ -50,6 +50,11 @@ class  ContentControl extends React.Component{
               display: grid;
               grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
             }
+
+            Link {
+              color: white;
+              text-decoration: none;
+            }
             `}
           </style>
           <div className="thumbnail">
