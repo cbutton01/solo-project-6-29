@@ -1,14 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TAG = {
-  fontFamily: 'sans-serif',
-  height: '1em',
-  postion: 'absolute',
-  backgroundColor: '#DC191B',
-  width: '5%',
-  color: 'white'
-}
 
 const THUMBNAIL = {
   display: 'flex',
@@ -24,11 +16,28 @@ const HEADLINE = {
 
 function Article(props){
   return(
-    <div style={THUMBNAIL}>
-        <h5 style={TAG}>{props.tag}</h5>
+    <section>
+      <style jsx>
+        {`
+          section {
+            display: flex;
+            margin: 5px;
+            font-family: sans-serif;
+          }
+
+          h5 {
+            height: 1em;
+            postion: absolute;
+            background-color: #DC191B;
+            width: 5%;
+            color: white;
+          }
+        `}
+      </style>
+        <h5>{props.tag}</h5>
         <img src={props.image} alt={props.alt}/>
         <h3 style={HEADLINE}>{props.headline}</h3>
-    </div>
+    </section>
   );
 }
 

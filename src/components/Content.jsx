@@ -35,14 +35,19 @@ function Content(){
       <style jsx>
         {`
           section {
-            backgroundColor: #ccc;
+            background-color: #ccc;
             display: grid;
-            gridTemplateColumns: 2fr 1fr;
+            grid-template-columns: 2fr 1fr;
           }
 
-          `}
-        </style>
-        <div style={THUMBNAIL_STORIES}>
+
+          .thumbnail {
+            display: grid;
+            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+          }
+        `}
+      </style>
+        <div className="thumbnail">
           {
             ARTICLE_LIST.map((article, index) =>
             <Article tag={article.tag}
