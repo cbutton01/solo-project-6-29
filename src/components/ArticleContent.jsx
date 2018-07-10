@@ -1,7 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ArticleContent(){
+function ArticleContent(props){
   return(<section>
-    <p>this guy fucks</p>
-  </section>)
+    <p>{props.story}</p>
+  </section>);
 }
+
+ArticleContent.propTypes = {
+  story: PropTypes.string
+};
+
+export default ArticleContent;

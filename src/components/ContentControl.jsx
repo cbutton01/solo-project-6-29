@@ -1,5 +1,6 @@
 import React from 'react';
 import Article from './Article';
+import ArticleContent from './ArticleContent';
 import { Link } from 'react-router-dom';
 
 
@@ -44,6 +45,36 @@ class  ContentControl extends React.Component{
   }
 
   render(){
+    let currentlyVisibleContent = null;
+    if (this.state.articleIsShowing){
+      currentlyVisibleContent = <ArticleContent
+        story={ArticleContent.story}
+        />;
+    } else {
+      currentlyVisibleContent =
+      <div>
+        <div className="thumbnail" onClick={this.handleClick}>
+          {
+            ARTICLE_LIST.map((article, index) =>
+            <Article tag={article.tag}
+              image={article.image}
+              alt={article.alt}
+              headline={article.headline}
+              key={index}
+              />
+          )}
+        </div>
+        <div>
+          <h2>News Stream</h2>
+          {
+            ARTICLE_LIST.map((article, index) =>
+            <Link to='#'>
+              <h3>{article.headline}</h3>
+            </Link>
+          )}
+        </div>
+      </div>;
+    }
     return(
       <section>
         <style jsx>
@@ -61,30 +92,11 @@ class  ContentControl extends React.Component{
               grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
             }
             `}
-        </style>
-        <div className="thumbnail" onClick={this.handleClick}>
-          {
-            ARTICLE_LIST.map((article, index) =>
-              <Article tag={article.tag}
-                image={article.image}
-                alt={article.alt}
-                headline={article.headline}
-                key={index}
-              />
-            )}
-        </div>
-        <div>
-          <h2>News Stream</h2>
-          {
-            ARTICLE_LIST.map((article, index) =>
-              <Link to='#'>
-                <h3>{article.headline}</h3>
-              </Link>
-            )}
-        </div>
-      </section>
-    );
+          </style>
+          {currentlyVisibleContent}
+        </section>
+      );
+    }
   }
-}
 
-export default ContentControl;
+  export default ContentControl;
