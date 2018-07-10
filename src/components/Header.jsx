@@ -25,10 +25,10 @@ function Header(){
   const TITLE = {
     display: 'flex',
     alignItems: 'baseline'
-  }
+  };
   const RED = {
     backgroundColor: '#DC191B'
-  }
+  };
 
 
   return (
@@ -37,8 +37,8 @@ function Header(){
         <div style={TITLE}>
           <h1>
             <span style={RED}>PC</span>GAMER
-            </h1>
-            <h5>THE GLOBAL AUTHORITY ON PC GAMES</h5>
+          </h1>
+          <h5>THE GLOBAL AUTHORITY ON PC GAMES</h5>
         </div>
         <p>SOCIAL MEDIA ICONS</p>
       </div>
