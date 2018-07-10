@@ -38,6 +38,11 @@ class  ContentControl extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
 
+  handleClick(){
+    this.setState({articleIsShowing: true});
+    console.log('State change');
+  }
+
   render(){
     return(
       <section>
@@ -57,7 +62,7 @@ class  ContentControl extends React.Component{
             }
             `}
         </style>
-        <div className="thumbnail" onClick=(this.handleClick)>
+        <div className="thumbnail" onClick={this.handleClick}>
           {
             ARTICLE_LIST.map((article, index) =>
               <Article tag={article.tag}
