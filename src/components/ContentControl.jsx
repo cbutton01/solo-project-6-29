@@ -1,5 +1,6 @@
 import React from 'react';
 import Article from './Article';
+import ArticleContent from './ArticleContent';
 import { Link } from 'react-router-dom';
 
 
@@ -8,21 +9,24 @@ const ARTICLE_LIST = [
     tag: 'News',
     image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
     alt: 'this is an image',
-    headline: 'This is the Headline'
+    headline: 'This is the Headline',
+    story: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   },
   {
     tag: 'News',
     image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
     alt: 'this is an image',
-    headline: 'This is the Headline'
+    headline: 'This is the Headline',
+    story: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   },
   {
     tag: 'News',
     image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
     alt: 'this is an image',
-    headline: 'This is the Headline'
+    headline: 'This is the Headline',
+    story: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   }
-]
+];
 
 class  ContentControl extends React.Component{
 
@@ -30,10 +34,47 @@ class  ContentControl extends React.Component{
     super(props);
     this.state = {
       articleIsShowing: false
-    }
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(){
+    this.setState({articleIsShowing: true});
+    console.log('State change');
   }
 
   render(){
+    let currentlyVisibleContent = null;
+    if (this.state.articleIsShowing){
+      currentlyVisibleContent = <ArticleContent
+        story={ArticleContent.story}
+        />;
+    } else {
+      currentlyVisibleContent =
+      <div>
+        <div className="thumbnail" onClick={this.handleClick}>
+          {
+            ARTICLE_LIST.map((article, index) =>
+            <Article tag={article.tag}
+              image={article.image}
+              alt={article.alt}
+              headline={article.headline}
+              key={index}
+              />
+          )}
+        </div>
+        <div>
+          <h2>News Stream</h2>
+          {
+            ARTICLE_LIST.map((article, index) =>
+            <Link to='#'>
+              <h3>{article.headline}</h3>
+            </Link>
+          )}
+        </div>
+      </div>;
+    }
     return(
       <section>
         <style jsx>
@@ -57,26 +98,7 @@ class  ContentControl extends React.Component{
             }
             `}
           </style>
-          <div className="thumbnail">
-            {
-              ARTICLE_LIST.map((article, index) =>
-              <Article tag={article.tag}
-                image={article.image}
-                alt={article.alt}
-                headline={article.headline}
-                key={index}
-                />
-            )}
-          </div>
-          <div>
-            <h2>News Stream</h2>
-            {
-              ARTICLE_LIST.map((article, index) =>
-              <Link to='#'>
-                <h3>{article.headline}</h3>
-              </Link>
-            )}
-          </div>
+          {currentlyVisibleContent}
         </section>
       );
     }

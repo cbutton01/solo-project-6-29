@@ -7,11 +7,11 @@ import { Switch, Route } from 'react-router-dom';
 function App(){
 
   const BACKGROUND = {
-      backgroundImage: 'url(https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKCb1PHAYBABGAEyCCKl03Vg27vT&quot;)',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover'
-  }
+    backgroundImage: 'url(https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKCb1PHAYBABGAEyCCKl03Vg27vT&quot;)',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover'
+  };
 
   return (
     <section style={BACKGROUND}>

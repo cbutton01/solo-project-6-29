@@ -26,19 +26,20 @@ function Article(props){
             position:;
           }
           `}
-        </style>
-        <h5>{props.tag}</h5>
-        <img src={props.image} alt={props.alt}/>
-        <h3>{props.headline}</h3>
-      </section>
-    );
-  }
+      </style>
+      <h5>{props.tag}</h5>
+      <img src={props.image} alt={props.alt}/>
+      <h3>{props.headline}</h3>
+    </section>
+  );
+}
 
-  Article.propTypes = {
-    tag: PropTypes.string,
-    image: PropTypes.string,
-    alt: PropTypes.string,
-    headline: PropTypes.string
-  };
+Article.propTypes = {
+  tag: PropTypes.string,
+  image: PropTypes.string,
+  alt: PropTypes.string,
+  headline: PropTypes.string,
+  story: PropTypes.string
+};
 
-  export default Article;
+export default Article;
