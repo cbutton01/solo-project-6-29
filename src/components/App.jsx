@@ -32,6 +32,7 @@ function App(){
         </div>
         <Switch>
           <Route exact path='/' component={ContentControl}/>
+          <Route path='/story' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
         </Switch>
       </div>
