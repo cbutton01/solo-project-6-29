@@ -1,13 +1,11 @@
 import React from 'react';
 import Article from './Article';
-import ArticleContent from './ArticleContent';
 import { Link } from 'react-router-dom';
 
 
 const ARTICLE_LIST = [
   {
     tag: 'News',
-    location: 'story1',
     image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
     alt: 'this is an image',
     headline: 'This is the Headline',
@@ -15,7 +13,6 @@ const ARTICLE_LIST = [
   },
   {
     tag: 'News',
-    location: 'story2',
     image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
     alt: 'this is an image',
     headline: 'This is another headline',
@@ -23,7 +20,6 @@ const ARTICLE_LIST = [
   },
   {
     tag: 'News',
-    location: 'story3',
     image: 'https://cdn.mos.cms.futurecdn.net/xdcPtestjJHLDAJEgWhDeR-600-80.jpg',
     alt: 'this is an image',
     headline: 'So is this',
@@ -33,78 +29,86 @@ const ARTICLE_LIST = [
 
 class  ContentControl extends React.Component{
 
+
   constructor(props){
     super(props);
     this.state = {
-      articleIsShowing: false
+      selectedArticle: null
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleClick(){
-    this.setState({articleIsShowing: true});
-    console.log('State change');
+  handleSelect(articleId){
+    let newArticleId = articleId;
+    if (newArticleId === this.state.selectedArticle) {
+      newArticleId = null;
+    }
+    this.setState({selectedArticle: newArticleId});
+    console.log(this.state.selectedArticle);
   }
+
 
   render(){
-    let currentlyVisibleContent = null;
-    if (this.state.articleIsShowing){
-      currentlyVisibleContent = <ArticleContent
-        story={ArticleContent.story}
-        />;
-    } else {
-      currentlyVisibleContent =
-      <div>
-        <div className="thumbnail">
-          {
-            ARTICLE_LIST.map((article, index) =>
-            <Article tag={article.tag}
-              image={article.image}
-              alt={article.alt}
-              headline={article.headline}
-              key={index}
-              />
-          )}
-        </div>
+
+  return(
+    <section>
+      <style jsx>
+        {`
+          section {
+            background-color: #ccc;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+          }
+
+
+          .thumbnail {
+            display: grid;
+            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+          }
+
+          Link {
+            color: white;
+            text-decoration: none;
+          }
+          `}
+        </style>
         <div>
-          <h2>News Stream</h2>
-          {
-            ARTICLE_LIST.map((article, index) =>
-            <Link to={article.location}>
-              <h3>{article.headline}</h3>
-            </Link>
-          )}
+          <div className="thumbnail" >
+            {
+              ARTICLE_LIST.map((article, index) => {
+                let story = null;
+                if(index === this.state.selectedArticle){
+                  story = article.story;
+                }
+              return (
+                <Article tag={article.tag}
+                  onSelect={this.handleSelect}
+                  image={article.image}
+                  alt={article.alt}
+                  headline={article.headline}
+                  story={story}
+                  articleId={index}
+                  key={index}
+                />
+              );
+            })
+            }
+          </div>
+          <div>
+            <h2>News Stream</h2>
+            {
+              ARTICLE_LIST.map((article, index) =>
+              <Link to='#'>
+                <h3>{article.headline}</h3>
+              </Link>
+            )}
+          </div>
         </div>
-      </div>;
-    }
-    return(
-      <section>
-        <style jsx>
-          {`
-            section {
-              background-color: #ccc;
-              display: grid;
-              grid-template-columns: 2fr 1fr;
-              grid-gap: 20px;
-            }
-
-
-            .thumbnail {
-              display: grid;
-              grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
-            }
-
-            Link {
-              color: white;
-              text-decoration: none;
-            }
-            `}
-          </style>
-          {currentlyVisibleContent}
-        </section>
-      );
-    }
+      </section>
+    );
   }
+}
 
-  export default ContentControl;
+export default ContentControl;

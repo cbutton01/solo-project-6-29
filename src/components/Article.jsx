@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 function Article(props){
 
-  let visibleStory = null;
-
   return(
-    <section onClick={this.handleClick}>
+    <section onClick={() => {props.onSelect(props.articleId)}}>
       <style jsx>
         {`
           section {
@@ -33,6 +31,7 @@ function Article(props){
       <h5>{props.tag}</h5>
       <img src={props.image} alt={props.alt}/>
       <h3>{props.headline}</h3>
+      <p>{props.story}</p>
     </section>
   );
 }
@@ -43,8 +42,8 @@ Article.propTypes = {
   alt: PropTypes.string,
   headline: PropTypes.string,
   story: PropTypes.string,
-  location: PropTypes.string,
-  currentRouterPath: PropTypes.string.isRequired
+  articleId: PropTypes.number,
+  onSelect: PropTypes.func
 };
 
 export default Article;

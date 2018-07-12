@@ -33,7 +33,6 @@ function App(){
         </div>
         <Switch>
           <Route exact path='/' component={ContentControl}/>
-          <Route path='/story' render={(props)=><Article articleList={this.state.ARTICLE_LIST} currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
         </Switch>
       </div>
