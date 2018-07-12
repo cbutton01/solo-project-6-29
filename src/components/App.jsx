@@ -2,6 +2,7 @@ import React from 'react';
 import Error404 from './Error404';
 import Header from './Header';
 import ContentControl from './ContentControl';
+import ArticleContent from './ArticleContent';
 import { Switch, Route } from 'react-router-dom';
 
 function App(){
@@ -22,6 +23,7 @@ function App(){
             grid-template-columns: 1fr 3fr 1fr;
             grid-gap: 10px;
             padding: 10px;
+            color: white;
           }
 
           `}
@@ -32,7 +34,7 @@ function App(){
         </div>
         <Switch>
           <Route exact path='/' component={ContentControl}/>
-          <Route path='/story' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} />} />
+          <Route path='/story' render={(props)=><Article articleList={this.state.ARTICLE_LIST} currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
         </Switch>
       </div>

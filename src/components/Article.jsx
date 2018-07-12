@@ -39,7 +39,8 @@ Article.propTypes = {
   image: PropTypes.string,
   alt: PropTypes.string,
   headline: PropTypes.string,
-  story: PropTypes.string
+  story: PropTypes.string,
+  location: PropTypes.string
 };
 
 export default Article;
