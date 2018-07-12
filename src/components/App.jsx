@@ -2,7 +2,6 @@ import React from 'react';
 import Error404 from './Error404';
 import Header from './Header';
 import ContentControl from './ContentControl';
-import ArticleContent from './ArticleContent';
 import { Switch, Route } from 'react-router-dom';
 
 function App(){

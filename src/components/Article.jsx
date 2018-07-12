@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Article(props){
+
+  let visibleStory = null;
+
   return(
-    <section>
+    <section onClick={this.handleClick}>
       <style jsx>
         {`
           section {
@@ -40,7 +43,8 @@ Article.propTypes = {
   alt: PropTypes.string,
   headline: PropTypes.string,
   story: PropTypes.string,
-  location: PropTypes.string
+  location: PropTypes.string,
+  currentRouterPath: PropTypes.string.isRequired
 };
 
 export default Article;

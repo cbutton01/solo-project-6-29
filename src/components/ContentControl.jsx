@@ -56,7 +56,7 @@ class  ContentControl extends React.Component{
     } else {
       currentlyVisibleContent =
       <div>
-        <div className="thumbnail" onClick={this.handleClick}>
+        <div className="thumbnail">
           {
             ARTICLE_LIST.map((article, index) =>
             <Article tag={article.tag}
@@ -71,7 +71,7 @@ class  ContentControl extends React.Component{
           <h2>News Stream</h2>
           {
             ARTICLE_LIST.map((article, index) =>
-            <Link to='#'>
+            <Link to={article.location}>
               <h3>{article.headline}</h3>
             </Link>
           )}
